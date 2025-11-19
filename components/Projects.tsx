@@ -1,0 +1,86 @@
+import React from 'react';
+import type { Project } from '../types';
+import { GitHubIcon, ExternalLinkIcon } from './Icons';
+
+const projectsData: Project[] = [
+  {
+    title: 'Project Nebula',
+    description: 'A data visualization platform for astronomical data, providing interactive charts and celestial maps.',
+    tags: ['React', 'D3.js', 'TypeScript', 'Tailwind CSS'],
+    imageUrl: 'https://picsum.photos/seed/nebula/600/400',
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    title: 'Astro Commerce',
+    description: 'An e-commerce site for space-themed merchandise with a custom shopping cart and payment integration.',
+    tags: ['Next.js', 'Stripe', 'GraphQL', 'PostgreSQL'],
+    imageUrl: 'https://picsum.photos/seed/astro/600/400',
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    title: 'Galaxy Getaways',
+    description: 'A travel booking website for fictional interplanetary vacations, featuring a stunning UI and animations.',
+    tags: ['Vue.js', 'GSAP', 'Firebase'],
+    imageUrl: 'https://picsum.photos/seed/galaxy/600/400',
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+];
+
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  return (
+    <div className="bg-white/5 backdrop-blur-sm border border-purple-800/30 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/50 hover:-translate-y-2 hover:scale-105 flex flex-col">
+      <img src={project.imageUrl} alt={project.title} className="w-full h-48 object-cover" />
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-2xl font-bold mb-2 text-purple-300">{project.title}</h3>
+        <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.map((tag) => (
+            <span key={tag} className="bg-purple-900/50 text-purple-300 text-sm font-medium px-3 py-1 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="mt-auto flex items-center space-x-4 pt-4 border-t border-gray-700/50">
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-purple-400 transition-colors">
+              <ExternalLinkIcon className="w-5 h-5 mr-2" />
+              Live Demo
+            </a>
+          )}
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-300 hover:text-purple-400 transition-colors">
+            <GitHubIcon className="w-5 h-5 mr-2" />
+            Source Code
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Projects: React.FC = () => {
+  return (
+    <section id="projects" className="py-20 md:py-32 relative">
+      <div className="absolute bottom-10 left-10 w-32 h-32 -z-10 opacity-60 hidden lg:block">
+        <div className="w-full h-full rounded-full bg-gradient-to-bl from-teal-400 to-blue-600 shadow-xl relative">
+        </div>
+        <div className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 border-4 border-teal-200/50 rounded-full rotate-[30deg]"></div>
+        <div className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 border-2 border-teal-200/80 rounded-full rotate-[30deg]"></div>
+      </div>
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-400">
+          Constellations of Code
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projectsData.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
