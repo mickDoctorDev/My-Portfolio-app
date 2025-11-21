@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
                 value={formData.tel}
                 onChange={handleChange}
                 className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-purple-500/30 rounded-lg px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300 group-focus-within:bg-white group-focus-within:text-gray-800 group-focus-within:placeholder-gray-400 group-focus-within:border-purple-300 group-focus-within:focus:ring-purple-500"
-                placeholder="+1 (555) 000-0000"
+                placeholder="(+66)090-000-0000"
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
               value={formData.subject}
               onChange={handleChange}
               className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-purple-500/30 rounded-lg px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300 group-focus-within:bg-white group-focus-within:text-gray-800 group-focus-within:placeholder-gray-400 group-focus-within:border-purple-300 group-focus-within:focus:ring-purple-500"
-              placeholder="Project Inquiry"
+              placeholder="Subject"
             />
           </div>
           
@@ -118,7 +118,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               rows={5}
               className="w-full bg-gray-50 dark:bg-black/20 border border-gray-300 dark:border-purple-500/30 rounded-lg px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400 transition-all duration-300 group-focus-within:bg-white group-focus-within:text-gray-800 group-focus-within:placeholder-gray-400 group-focus-within:border-purple-300 group-focus-within:focus:ring-purple-500"
-              placeholder="Tell me about your project..."
+              placeholder="Tell me something"
               required
             ></textarea>
           </div>
