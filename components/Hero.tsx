@@ -7,13 +7,13 @@ const Hero: React.FC = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
         <div className="md:w-1/2 mb-10 md:mb-0 z-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">
-            <span className="text-gray-300">Hi, I'm </span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+            <span className="text-gray-700 dark:text-gray-300 transition-colors">Hi, I'm </span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-500">
               Mick
             </span>
             <br />
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-m mx-auto md:mx-0">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-m mx-auto md:mx-0 transition-colors">
             A Frontend Developer who turns ideas into stunning web realities in the vast universe of code.
           </p>
           <a

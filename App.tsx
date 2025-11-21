@@ -13,6 +13,16 @@ const App: React.FC = () => {
   const [stars, setStars] = useState<React.ReactNode[]>([]);
   const [meteors, setMeteors] = useState<React.ReactNode[]>([]);
   const [currentView, setCurrentView] = useState<'home' | 'timeline'>('home');
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    // Apply dark class to html element based on theme state
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   useEffect(() => {
     const generateStars = () => {
@@ -76,14 +86,24 @@ const App: React.FC = () => {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <div className="min-h-screen font-sans text-white overflow-x-hidden">
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f] pointer-events-none">
-        {stars}
-        {meteors}
+    <div className="min-h-screen font-sans transition-colors duration-300 dark:text-white text-gray-900 overflow-x-hidden">
+      <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-500 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f]' 
+          : 'bg-gradient-to-b from-blue-50 via-white to-purple-50'
+      }`}>
+        <div className={`transition-opacity duration-500 ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}>
+          {stars}
+          {meteors}
+        </div>
       </div>
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Header currentView={currentView} onNavigate={handleNavigate} />
+        <Header currentView={currentView} onNavigate={handleNavigate} theme={theme} toggleTheme={toggleTheme} />
         <main className="container mx-auto px-4 md:px-8 flex-grow">
           {currentView === 'home' ? (
             <>
