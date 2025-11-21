@@ -88,7 +88,7 @@ const App: React.FC = () => {
           {currentView === 'home' ? (
             <>
               <Hero />
-              <About />
+              <About onNavigate={handleNavigate} />
               <Projects />
               <Skills />
               <Contact />
