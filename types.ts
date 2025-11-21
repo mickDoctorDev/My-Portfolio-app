@@ -14,3 +14,9 @@ export interface Skill {
   // Fix: Cannot find namespace 'JSX'. Use ReactElement instead.
   icon: ReactElement;
 }
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  description: string;
+}

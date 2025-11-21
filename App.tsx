@@ -7,10 +7,12 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Timeline from './components/Timeline';
 
 const App: React.FC = () => {
   const [stars, setStars] = useState<React.ReactNode[]>([]);
   const [meteors, setMeteors] = useState<React.ReactNode[]>([]);
+  const [currentView, setCurrentView] = useState<'home' | 'timeline'>('home');
 
   useEffect(() => {
     const generateStars = () => {
@@ -49,20 +51,51 @@ const App: React.FC = () => {
     generateMeteors();
   }, []);
 
+  const handleNavigate = (view: 'home' | 'timeline', sectionId?: string) => {
+    if (view !== currentView) {
+      setCurrentView(view);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      if (view === 'home' && sectionId) {
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else {
+      if (sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
-    <div className="bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f] text-white min-h-screen font-sans overflow-x-hidden">
-      <div className="absolute inset-0 z-0 overflow-hidden">
+    <div className="min-h-screen font-sans text-white overflow-x-hidden">
+      <div className="fixed inset-0 z-0 bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f] pointer-events-none">
         {stars}
         {meteors}
       </div>
-      <div className="relative z-10">
-        <Header />
-        <main className="container mx-auto px-4 md:px-8">
-          <Hero />
-          <About />
-          <Projects />
-          <Skills />
-          <Contact />
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Header currentView={currentView} onNavigate={handleNavigate} />
+        <main className="container mx-auto px-4 md:px-8 flex-grow">
+          {currentView === 'home' ? (
+            <>
+              <Hero />
+              <About />
+              <Projects />
+              <Skills />
+              <Contact />
+            </>
+          ) : (
+            <Timeline />
+          )}
         </main>
         <Footer />
         <ScrollToTopButton />
