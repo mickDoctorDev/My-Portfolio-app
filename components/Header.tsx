@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ currentView, onNavigate, theme, toggleT
 
   const navLinks = [
     { id: 'about', label: 'About', view: 'home' },
-    { id: 'timeline', label: 'My Timeline', view: 'timeline' },
+    { id: 'timeline', label: 'Timeline', view: 'timeline' },
     { id: 'projects', label: 'Projects', view: 'home' },
     { id: 'skills', label: 'Skills', view: 'home' },
     { id: 'contact', label: 'Contact', view: 'home' },

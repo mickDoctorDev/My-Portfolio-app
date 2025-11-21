@@ -17,8 +17,6 @@ import {
   HTML5Icon,
   FlutterIcon,
   CSS3Icon,
-  
-
 
 } from './Icons';
 
@@ -136,7 +134,6 @@ const Skills: React.FC = () => {
           {/* Gradient Masks for fading effect at edges - Adjusted for light/dark */}
           <div className="absolute rounded-l-3xl top-0 left-0 z-20 w-12 md:w-22 h-full bg-gradient-to-r from-blue-50 dark:from-[#4b1980] to-transparent pointer-events-none"></div>
           <div className="absolute rounded-r-3xl top-0 right-0 z-20 w-12 md:w-22 h-full bg-gradient-to-l from-purple-50 dark:from-[#4b1980] to-transparent pointer-events-none"></div>
-          
           {/* Scrollable Container */}
           <div 
             ref={scrollRef}
@@ -152,6 +149,9 @@ const Skills: React.FC = () => {
                 <SkillCard key={`${skill.name}-${index}`} skill={skill} />
               ))}
             </div>
+          </div>
+          <div className = "container text-center">
+            <div className = "animate-pulse space-x-4 bold">Drag / Hover - Pause</div>
           </div>
         </div>
       </div>
