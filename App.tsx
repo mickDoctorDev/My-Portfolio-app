@@ -26,20 +26,20 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const generateStars = () => {
-        const newStars = [];
-        const numStars = 250;
-        for (let i = 0; i < numStars; i++) {
-            const style = {
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 2 + 1}px`,
-                height: `${Math.random() * 2 + 1}px`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${Math.random() * 5 + 5}s`,
-            };
-            newStars.push(<div key={`star-${i}`} className="absolute bg-white rounded-full star-twinkle" style={style}></div>);
-        }
-        setStars(newStars);
+      const newStars = [];
+      const numStars = 250;
+      for (let i = 0; i < numStars; i++) {
+        const style = {
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          width: `${Math.random() * 2 + 1}px`,
+          height: `${Math.random() * 2 + 1}px`,
+          animationDelay: `${Math.random() * 10}s`,
+          animationDuration: `${Math.random() * 5 + 5}s`,
+        };
+        newStars.push(<div key={`star-${i}`} className="absolute bg-white rounded-full star-twinkle" style={style}></div>);
+      }
+      setStars(newStars);
     };
 
     const generateMeteors = () => {
@@ -65,7 +65,7 @@ const App: React.FC = () => {
     if (view !== currentView) {
       setCurrentView(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      
+
       if (view === 'home' && sectionId) {
         setTimeout(() => {
           const element = document.getElementById(sectionId);
@@ -92,11 +92,10 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen font-sans transition-colors duration-300 dark:text-white text-gray-900 overflow-x-hidden">
-      <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-500 ${
-        theme === 'dark' 
-          ? 'bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f]' 
+      <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-500 ${theme === 'dark'
+          ? 'bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f]'
           : 'bg-gradient-to-b from-blue-50 via-white to-purple-50'
-      }`}>
+        }`}>
         <div className={`transition-opacity duration-500 ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}>
           {stars}
           {meteors}

@@ -19,4 +19,6 @@ export interface TimelineItem {
   year: string;
   title: string;
   description: string;
+  category: 'PCSHSPL' | 'SAMSEN' | 'Chula';
+  image?: string;
 }
