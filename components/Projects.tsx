@@ -1,31 +1,25 @@
 import React from 'react';
 import type { Project } from '../types';
 import { GitHubIcon, ExternalLinkIcon } from './Icons';
+const SAM_logo = "/assets/images/SAMTECH_logo.png";
+const ZOMBIE_logo = "/assets/images/SAMSEN_VS_ZOMBIE_logo.png";
 
 const projectsData: Project[] = [
   {
-    title: 'Project Nebula',
-    description: 'A data visualization platform for astronomical data, providing interactive charts and celestial maps.',
-    tags: ['React', 'D3.js', 'TypeScript', 'Tailwind CSS'],
-    imageUrl: 'https://picsum.photos/seed/nebula/600/400',
+    title: 'SAMTECH_Application',
+    description: 'Color detection application with live-cam on mobile phone',
+    tags: ['Flutter', 'Dart', 'App', 'iOS', 'Android'],
+    imageUrl: SAM_logo,
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/mickDoctorDev/SAMTECH_Application-Dart',
   },
   {
-    title: 'Astro Commerce',
-    description: 'An e-commerce site for space-themed merchandise with a custom shopping cart and payment integration.',
-    tags: ['Next.js', 'Stripe', 'GraphQL', 'PostgreSQL'],
-    imageUrl: 'https://picsum.photos/seed/astro/600/400',
+    title: 'SAMSEN_VS_ZOMBIE-Edition',
+    description: 'Mini-game that help teacher do game for learning easier.',
+    tags: ['C++', 'Game Development', 'Notepad++'],
+    imageUrl: ZOMBIE_logo,
     liveUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    title: 'Galaxy Getaways',
-    description: 'A travel booking website for fictional interplanetary vacations, featuring a stunning UI and animations.',
-    tags: ['Vue.js', 'GSAP', 'Firebase'],
-    imageUrl: 'https://picsum.photos/seed/galaxy/600/400',
-    liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/mickDoctorDev/SAMSEN_VS_ZOMBIE-Edition',
   },
 ];
 
@@ -44,12 +38,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           ))}
         </div>
         <div className="mt-auto flex items-center space-x-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
-          {project.liveUrl && (
+          {/* {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors">
               <ExternalLinkIcon className="w-5 h-5 mr-2" />
               Live Demo
             </a>
-          )}
+          )} */}
           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-500 dark:hover:text-purple-400 transition-colors">
             <GitHubIcon className="w-5 h-5 mr-2" />
             Source Code
