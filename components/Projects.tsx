@@ -1,15 +1,15 @@
 import React from 'react';
 import type { Project } from '../types';
 import { GitHubIcon, ExternalLinkIcon } from './Icons';
-const SAM_logo = "/assets/images/SAMTECH_logo.png";
-const ZOMBIE_logo = "/assets/images/SAMSEN_VS_ZOMBIE_logo.png";
+const SAM_logo = "../assets/images/SAMTECH_logo.png";
+const ZOMBIE_logo = "../assets/images/SAMSEN_VS_ZOMBIE_logo.png";
 
 const projectsData: Project[] = [
   {
     title: 'SAMTECH_Application',
     description: 'Color detection application with live-cam on mobile phone',
     tags: ['Flutter', 'Dart', 'App', 'iOS', 'Android'],
-    imageUrl: SAM_logo,
+    imageUrl: "https://znzzn7sflh66ipma.public.blob.vercel-storage.com/SAMTECH_logo.png",
     liveUrl: '#',
     githubUrl: 'https://github.com/mickDoctorDev/SAMTECH_Application-Dart',
   },
@@ -17,7 +17,7 @@ const projectsData: Project[] = [
     title: 'SAMSEN_VS_ZOMBIE-Edition',
     description: 'Mini-game that help teacher do game for learning easier.',
     tags: ['C++', 'Game Development', 'Notepad++'],
-    imageUrl: ZOMBIE_logo,
+    imageUrl: "https://znzzn7sflh66ipma.public.blob.vercel-storage.com/Screenshot%202568-11-27%20at%2020.50.37.png",
     liveUrl: '#',
     githubUrl: 'https://github.com/mickDoctorDev/SAMSEN_VS_ZOMBIE-Edition',
   },
