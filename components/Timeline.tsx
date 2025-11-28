@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { timelineData } from '../timelineData';
 import type { TimelineItem } from '../types';
 
-const categories: TimelineItem['category'][] = ['PCSHSPL', 'SAMSEN', 'Chula'];
+const categories: TimelineItem['category'][] = ['PCSHSPL', 'SAMSEN', 'CHULA'];
 
 const Timeline: React.FC = () => {
   // Default to all categories selected or just the first one? 
   // "Choose multiple periods" implies starting with one or all. Let's start with all for a full view, or just PCSHSPL as before.
   // Let's start with all to show the "connected" nature immediately.
-  const [selectedCategories, setSelectedCategories] = useState<TimelineItem['category'][]>(['PCSHSPL', 'SAMSEN', 'Chula']);
+  const [selectedCategories, setSelectedCategories] = useState<TimelineItem['category'][]>(['PCSHSPL', 'SAMSEN', 'CHULA']);
 
   const toggleCategory = (category: TimelineItem['category']) => {
     setSelectedCategories(prev =>

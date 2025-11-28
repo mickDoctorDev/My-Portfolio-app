@@ -33,14 +33,14 @@ export const timelineData: TimelineItem[] = [
     year: '2022',
     title: 'Exploring New Tech',
     description: 'Expanded my toolkit with TypeScript, Next.js, and Tailwind CSS. Focused on performance optimization and accessibility. The skillset grew stronger.',
-    category: 'Chula',
+    category: 'CHULA',
     image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format&fit=crop'
   },
   {
     year: 'Present',
     title: 'Commanding the Ship',
     description: 'Currently building complex, scalable web applications and exploring the frontiers of 3D web graphics and AI integration. Ready for the next big leap.',
-    category: 'Chula',
+    category: 'CHULA',
     image: 'https://images.unsplash.com/photo-1614728853913-1e22ba61d527?q=80&w=1000&auto=format&fit=crop'
   }
 ];
