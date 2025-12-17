@@ -28,12 +28,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
             With a strong command of modern web technologies, I love crafting responsive and dynamic applications. From the smallest component to the overall architecture, I am dedicated to writing clean, efficient, and scalable code. Let's build something amazing together and launch it into the web-iverse!
           </p>
 
-          <button
-            onClick={() => onNavigate('timeline')}
-            className="mt-8 inline-block px-8 py-3 bg-transparent border border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-300 font-semibold rounded-full hover:bg-purple-400 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(168,85,247,0.3)] hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]"
-          >
-            View Full Timeline
-          </button>
+
         </div>
       </div>
     </section>

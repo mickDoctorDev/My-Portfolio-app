@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import CoreTraits from './components/CoreTraits';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
@@ -93,8 +94,8 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen font-sans transition-colors duration-300 dark:text-white text-gray-900 overflow-x-hidden">
       <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-500 ${theme === 'dark'
-          ? 'bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f]'
-          : 'bg-gradient-to-b from-blue-50 via-white to-purple-50'
+        ? 'bg-gradient-to-b from-black via-[#1e0a33] to-[#3a1d5f]'
+        : 'bg-gradient-to-b from-blue-50 via-white to-purple-50'
         }`}>
         <div className={`transition-opacity duration-500 ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}>
           {stars}
@@ -104,17 +105,13 @@ const App: React.FC = () => {
       <div className="relative z-10 flex flex-col min-h-screen">
         <Header currentView={currentView} onNavigate={handleNavigate} theme={theme} toggleTheme={toggleTheme} />
         <main className="container mx-auto px-4 md:px-8 flex-grow">
-          {currentView === 'home' ? (
-            <>
-              <Hero />
-              <About onNavigate={handleNavigate} />
-              <Projects />
-              <Skills />
-              <Contact />
-            </>
-          ) : (
-            <Timeline />
-          )}
+          <Hero />
+          <About onNavigate={handleNavigate} />
+          <CoreTraits />
+          <Timeline />
+          <Projects />
+          <Skills />
+          <Contact />
         </main>
         <Footer />
         <ScrollToTopButton />

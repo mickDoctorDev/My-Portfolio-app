@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
             A Frontend Developer who turns ideas into stunning web realities in the vast universe of code.
           </p>
           <a
-            href="#projects"
+            href="#about"
             className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-purple-700 transition-transform transform hover:scale-105 shadow-lg shadow-purple-500/30 "
           >
             Explore My Universe
