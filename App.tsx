@@ -9,11 +9,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Timeline from './components/Timeline';
+import Welcome from './components/Welcome';
 
 const App: React.FC = () => {
   const [stars, setStars] = useState<React.ReactNode[]>([]);
   const [meteors, setMeteors] = useState<React.ReactNode[]>([]);
-  const [currentView, setCurrentView] = useState<'home' | 'timeline'>('home');
+  const [currentView, setCurrentView] = useState<'welcome' | 'home' | 'timeline'>('welcome');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const App: React.FC = () => {
     generateMeteors();
   }, []);
 
-  const handleNavigate = (view: 'home' | 'timeline', sectionId?: string) => {
+  const handleNavigate = (view: 'welcome' | 'home' | 'timeline', sectionId?: string) => {
     if (view !== currentView) {
       setCurrentView(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -102,20 +103,30 @@ const App: React.FC = () => {
           {meteors}
         </div>
       </div>
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Header currentView={currentView} onNavigate={handleNavigate} theme={theme} toggleTheme={toggleTheme} />
-        <main className="container mx-auto px-4 md:px-8 flex-grow">
-          <Hero />
-          <About onNavigate={handleNavigate} />
-          <CoreTraits />
-          <Timeline />
-          <Projects />
-          <Skills />
-          <Contact />
-        </main>
-        <Footer />
-        <ScrollToTopButton />
-      </div>
+
+      {currentView === 'welcome' ? (
+        <Welcome onEnter={() => handleNavigate('home')} />
+      ) : (
+        <div className="relative z-10 flex flex-col min-h-screen animate-[fadeIn_2s_ease-out]">
+          <Header
+            currentView={currentView}
+            onNavigate={(view, id) => handleNavigate(view, id)}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
+          <main className="container mx-auto px-4 md:px-8 flex-grow">
+            <Hero />
+            <About onNavigate={handleNavigate as any} />
+            <CoreTraits />
+            <Timeline />
+            <Projects />
+            <Skills />
+            <Contact />
+          </main>
+          <Footer />
+          <ScrollToTopButton />
+        </div>
+      )}
     </div>
   );
 };
