@@ -11,10 +11,12 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 import Timeline from './components/Timeline';
 import Welcome from './components/Welcome';
 
+import PortfolioViewer from './components/PortfolioViewer';
+
 const App: React.FC = () => {
   const [stars, setStars] = useState<React.ReactNode[]>([]);
   const [meteors, setMeteors] = useState<React.ReactNode[]>([]);
-  const [currentView, setCurrentView] = useState<'welcome' | 'home' | 'timeline'>('welcome');
+  const [currentView, setCurrentView] = useState<'welcome' | 'home' | 'timeline' | 'portfolio'>('welcome');
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
@@ -63,7 +65,7 @@ const App: React.FC = () => {
     generateMeteors();
   }, []);
 
-  const handleNavigate = (view: 'welcome' | 'home' | 'timeline', sectionId?: string) => {
+  const handleNavigate = (view: 'welcome' | 'home' | 'timeline' | 'portfolio', sectionId?: string) => {
     if (view !== currentView) {
       setCurrentView(view);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -105,7 +107,14 @@ const App: React.FC = () => {
       </div>
 
       {currentView === 'welcome' ? (
-        <Welcome onEnter={() => handleNavigate('home')} />
+        <Welcome
+          onEnter={() => handleNavigate('home')}
+          onOpenPortfolio={() => handleNavigate('portfolio')}
+        />
+      ) : currentView === 'portfolio' ? (
+        <div className="relative z-10 flex flex-col min-h-screen animate-[fadeIn_0.5s_ease-out]">
+          <PortfolioViewer onBack={() => handleNavigate('welcome')} />
+        </div>
       ) : (
         <div className="relative z-10 flex flex-col min-h-screen animate-[fadeIn_2s_ease-out]">
           <Header

@@ -5,9 +5,10 @@ import RocketAnimation from './RocketAnimation';
 
 interface WelcomeProps {
     onEnter: () => void;
+    onOpenPortfolio: () => void;
 }
 
-const Welcome: React.FC<WelcomeProps> = ({ onEnter }) => {
+const Welcome: React.FC<WelcomeProps> = ({ onEnter, onOpenPortfolio }) => {
     const [isLaunching, setIsLaunching] = useState(false);
 
     const handleEnter = () => {
@@ -68,19 +69,12 @@ const Welcome: React.FC<WelcomeProps> = ({ onEnter }) => {
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
 
-                    <a
-                        href="#"
+                    <button
+                        onClick={onOpenPortfolio}
                         className="group relative px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-full text-cyan-400 font-bold text-lg shadow-[0_0_10px_rgba(34,211,238,0.3)] hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:scale-105 transition-all duration-300"
                     >
-                        📖 Read Book 1
-                    </a>
-
-                    <a
-                        href="#"
-                        className="group relative px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-full text-cyan-400 font-bold text-lg shadow-[0_0_10px_rgba(34,211,238,0.3)] hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] hover:scale-105 transition-all duration-300"
-                    >
-                        📚 Read Book 2
-                    </a>
+                        📚 Portfolio มัธยม - เรื่องราวของเด็กสายคอม
+                    </button>
 
                 </div>
             </div>
