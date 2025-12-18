@@ -48,10 +48,10 @@ const Welcome: React.FC<WelcomeProps> = ({ onEnter, onOpenPortfolio }) => {
                     <a href="https://www.linkedin.com/in/noppawat-loryingyongphaisal-129808343" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan-400 transform hover:scale-125 transition-all duration-300">
                         <LinkedInIcon className="w-10 h-10" />
                     </a>
-                    <a href="#" className="text-white hover:text-pink-400 transform hover:scale-125 transition-all duration-300">
+                    <a href="https://www.instagram.com/nop_mick" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-400 transform hover:scale-125 transition-all duration-300">
                         <InstagramIcon className="w-10 h-10" />
                     </a>
-                    <a href="#" className="text-white hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
+                    <a href="https://www.facebook.com/nph.wrrth.n.hlx.ying.yng.phisal" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transform hover:scale-125 transition-all duration-300">
                         <FacebookIcon className="w-10 h-10" />
                     </a>
                 </div>
