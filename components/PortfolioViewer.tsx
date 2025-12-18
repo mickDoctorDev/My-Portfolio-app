@@ -35,14 +35,14 @@ const PortfolioViewer: React.FC<PortfolioViewerProps> = ({ onBack }) => {
                 {/* Placeholder for PDF - In real usage, replace src with actual PDF path */}
                 {/* Using a generic sample or empty iframe for now since we don't have the file */}
                 <iframe
-                    src="assets/images/portfolio_Med.pdf" // Placeholder path
+                    src="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf" // Placeholder path
                     className="w-full h-full"
                     title="Portfolio PDF"
                     style={{ border: 'none' }}
                 >
                     <p className="text-center p-10 text-white">
                         Your browser does not support PDFs.
-                        <a href="assets/images/portfolio_Med.pdf" className="text-cyan-400 underline">Download the PDF</a>.
+                        <a href="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf" className="text-cyan-400 underline">Download the PDF</a>.
                     </p>
                 </iframe>
 
