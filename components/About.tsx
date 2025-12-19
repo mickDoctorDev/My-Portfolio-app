@@ -21,7 +21,7 @@ const About: React.FC<AboutProps> = ({ onNavigate }) => {
         </h2>
         <div className="max-w-3xl mx-auto bg-white/80 dark:bg-white/5 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-purple-200 dark:border-purple-800/50 flex flex-col items-center transition-colors duration-300">
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-colors">
-            Hello! I'm Mick, a passionate frontend developer charting my course through the digital cosmos. My journey began with a curiosity for how beautiful interfaces come to life, and it has since evolved into a full-blown mission to build seamless, user-centric web experiences.
+            Hello! I'm Mick, a passionate full stack developer with creative and innovative skills charting my course through the digital cosmos. My journey began with a curiosity for how beautiful interfaces come to life, and it has since evolved into a full-blown mission to build seamless, user-centric web experiences.
           </p>
           <br />
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-colors">
