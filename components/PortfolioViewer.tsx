@@ -80,14 +80,14 @@ const PortfolioViewer: React.FC<PortfolioViewerProps> = ({ onBack }) => {
                 {/* PDF Viewer Body - Iframe for Desktop */}
                 <div className="flex-grow w-full h-full relative bg-gray-600">
                     <iframe
-                        src="/assets/images/portfolio_Med.pdf"
+                        src="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf"
                         className="w-full h-full"
                         title="Portfolio PDF"
                         style={{ border: 'none' }}
                     >
                         <p className="text-center p-10 text-white">
                             Your browser does not support PDFs.
-                            <a href="/assets/images/portfolio_Med.pdf" className="text-cyan-400 underline">Download the PDF</a>.
+                            <a href="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf" className="text-cyan-400 underline">Download the PDF</a>.
                         </p>
                     </iframe>
                 </div>
@@ -143,7 +143,7 @@ const PortfolioViewer: React.FC<PortfolioViewerProps> = ({ onBack }) => {
             {/* PDF Viewer Body */}
             <div className="flex-grow w-full h-full relative bg-gray-600 overflow-auto flex justify-center p-4">
                 <Document
-                    file="/assets/images/portfolio_Med.pdf"
+                    file="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf"
                     onLoadSuccess={onDocumentLoadSuccess}
                     loading={
                         <div className="flex items-center justify-center p-10">
@@ -154,7 +154,7 @@ const PortfolioViewer: React.FC<PortfolioViewerProps> = ({ onBack }) => {
                         <div className="text-center p-10 text-white">
                             <p className="mb-4">Unable to load the PDF file.</p>
                             <a
-                                href="/assets/images/portfolio_Med.pdf"
+                                href="https://znzzn7sflh66ipma.public.blob.vercel-storage.com/portfolio_Med.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 py-2 bg-cyan-600 rounded hover:bg-cyan-500 transition-colors"
